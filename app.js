@@ -9,12 +9,12 @@ const countryApi = () => {
 countryApi();
 
 const displayData = (data) => {
-    const CountryParentNode = document.getElementById('country');
+    const CountryParentNode = document.getElementById('countries');
     for (let i = 0; i < data.length; i++) {
         const country = data[i];
 
         const countriesDiv = document.createElement('div');
-        // countriesDiv.className = 'country';
+        countriesDiv.className = 'country';
         // const countryName = document.createElement('h1');
         // countryName.innerText = country.name;
 
@@ -25,8 +25,8 @@ const displayData = (data) => {
         // countryDiv.appendChild(capital);
         
         const countryInfo = `
-            <h3>${country.name}</h3>
-            <p>${country.capital}</p>
+            <h3 class="country-name">${country.name}</h3>
+            <p class="capital-name">${country.capital}</p>
         `
         countriesDiv.innerHTML = countryInfo;
 
