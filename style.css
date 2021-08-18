@@ -18,3 +18,10 @@
 .country:hover{
     background-color:#dba6a6;
 }
+.details-button{
+    width: 80px;
+    height: 30px;
+    border-radius:5px;
+    background-color: tomato;
+    color: white;
+}

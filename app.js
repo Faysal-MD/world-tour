@@ -17,6 +17,7 @@ const displayData = (data) => {
         const countryInfo = `
             <h3 class="country-name">${country.name}</h3>
             <p class="capital-name">${country.capital}</p>
+            <button class="details-button">Details</button>
         `;
         countriesDiv.innerHTML = countryInfo;
 
