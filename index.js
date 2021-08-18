@@ -9,13 +9,20 @@ const countryApi = () => {
 countryApi();
 
 const displayData = (data) => {
-    const CountryParentNode = document.getElementById('country-parent');
-    for (let i = 0; i< data.length; i++) {
-      const country = data[i];
-      const countryName = document.createElement('h1');
-      countryName.innerText = country.name;
-      CountryParentNode.appendChild(countryName);
-      
-      
+    const CountryParentNode = document.getElementById('country');
+    for (let i = 0; i < data.length; i++) {
+        const country = data[i];
+
+        const countryDiv = document.createElement('div');
+        const countryName = document.createElement('h1');
+        countryName.innerText = country.name;
+
+        const capital = document.createElement('p');
+        capital.innerText = country.capital;
+
+        countryDiv.appendChild(countryName);
+        countryDiv.appendChild(capital);
+
+        CountryParentNode.appendChild(countryDiv);
     }
 }
