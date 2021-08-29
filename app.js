@@ -17,7 +17,7 @@ const displayData = (data) => {
         const countryInfo = `
             <h3 class="country-name">${country.name}</h3>
             <p class="capital-name">${country.capital}</p>
-            <button class="details-button">Details</button>
+            <button onclick="displayCountryDetail('${country.name}')" class="details-button">Details</button>
         `;
         countriesDiv.innerHTML = countryInfo;
 
@@ -37,4 +37,20 @@ const displayData = (data) => {
 
     //     CountryParentNode.appendChild(countriesDiv);
     // }
+}
+
+const displayCountryDetail = name => {
+    const url = `https://restcountries.eu/rest/v2/name/${name}`;
+    fetch(url)
+        .then(res => res.json())
+        .then(data => extraInfo(data[0]))
+}
+const extraInfo = country => {
+    const countryDiv = document.getElementById('countryDetails');
+    countryDiv.innerHTML = `
+        <h1>${country.name}</h1>
+        <p>Population: ${country.population}</p>
+        <p>Area: ${country.area}</p>
+        <img class="flag" src="${country.flag}">
+    `
 }
